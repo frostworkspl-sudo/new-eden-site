@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Eden: Survival Wasteland – Official Field Manual</title>
+<meta name="description" content="New Eden: Survival Wasteland – 90s retro post-apocalyptic colony sim for mobile. Official field manual.">
+<style>
+:root{--bg:#0d0f0e;--bg2:#161a19;--steel:#2b3330;--steel2:#3c4742;--amber:#ffb000;--green:#4cff7a;--text:#c9d1c3;--dim:#8a948a;--paper:#d8c9a0;--ink:#2a2418}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Courier New",Consolas,monospace;line-height:1.65;font-size:16px;
+background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0 1px,transparent 1px 3px)}
+a{color:var(--amber)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+h1,h2,h3{text-transform:uppercase;letter-spacing:.08em;margin:0 0 .6em}
+h2{color:var(--amber);font-size:1.7rem;border-bottom:2px dashed var(--steel2);padding-bottom:.3em}
+h2::before{content:"> ";color:var(--green)}
+h3{color:var(--green);font-size:1.1rem}
+section{padding:56px 0}
+.btn{display:inline-block;padding:14px 22px;border:2px solid var(--amber);color:var(--amber);text-decoration:none;text-transform:uppercase;font-weight:bold;letter-spacing:.1em;background:rgba(255,176,0,.06);transition:.15s}
+.btn:hover,.btn:focus{background:var(--amber);color:#000;outline:none}
+.btn.alt{border-color:var(--green);color:var(--green);background:rgba(76,255,122,.06)}
+.btn.alt:hover,.btn.alt:focus{background:var(--green);color:#000}
+/* hero */
+header{text-align:center;padding:40px 0 30px;background:radial-gradient(ellipse at top,#1d2422,var(--bg) 70%);border-bottom:3px double var(--steel2)}
+.top-panel{position:relative;width:100%;max-width:1400px;margin:-40px auto 22px;border-bottom:3px solid var(--steel2)}
+.top-panel img{width:100%;max-height:85vh;object-fit:cover;object-position:center}
+.top-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,var(--bg)),linear-gradient(to right,var(--bg),transparent 15%,transparent 85%,var(--bg));pointer-events:none}
+.logo-ph{border:2px dashed var(--steel2);padding:28px;color:var(--dim)}
+.tag{color:var(--green);letter-spacing:.2em;text-transform:uppercase;font-size:.9rem}
+header h1{font-size:clamp(1.8rem,5vw,3.2rem);color:var(--amber);text-shadow:0 0 12px rgba(255,176,0,.45);margin:.2em 0}
+.lead{max-width:700px;margin:0 auto 24px;color:var(--text)}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.video{position:relative;max-width:860px;margin:28px auto 0;aspect-ratio:16/9;border:3px solid var(--steel2);box-shadow:0 0 30px rgba(76,255,122,.15)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(13,15,14,.95);border-bottom:1px solid var(--steel2);backdrop-filter:blur(4px)}
+nav .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;padding:10px 18px}
+nav a{color:var(--text);text-decoration:none;text-transform:uppercase;font-size:.85rem;letter-spacing:.1em;padding:4px 8px;border:1px solid transparent}
+nav a:hover{border-color:var(--amber);color:var(--amber)}
+/* cards */
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--bg2);border:1px solid var(--steel2);border-left:4px solid var(--amber);padding:20px}
+.shots{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:30px}
+.shots figure{margin:0;border:2px solid var(--steel2);background:#000}
+.shots figcaption{padding:6px 10px;font-size:.8rem;color:var(--dim);text-transform:uppercase}
+/* manual */
+.manual{background:var(--paper);color:var(--ink);padding:26px;border:1px solid #8c7a4a;box-shadow:inset 0 0 60px rgba(90,60,10,.35),0 0 0 4px var(--steel)}
+.manual h2{color:#5a2d00;border-color:#8c7a4a}
+.manual h2::before{color:#a03000}
+.manual h3{color:#7a2a00}
+.manual a{color:#7a2a00}
+.toc{columns:2 240px;padding-left:1.2em;margin:0 0 24px}
+details{border:1px solid #8c7a4a;margin:10px 0;background:rgba(255,255,255,.18)}
+summary{cursor:pointer;padding:12px 14px;font-weight:bold;text-transform:uppercase;letter-spacing:.06em;background:rgba(90,60,10,.15)}
+summary:hover{background:rgba(90,60,10,.3)}
+details>div{padding:4px 18px 16px}
+.manual table{border-collapse:collapse;width:100%;margin:10px 0;font-size:.9rem}
+.manual th,.manual td{border:1px solid #8c7a4a;padding:6px 8px;text-align:left;vertical-align:top}
+.manual th{background:rgba(90,60,10,.25)}
+.tbl{overflow-x:auto}
+.note{border-left:4px solid #a03000;padding:6px 12px;background:rgba(160,48,0,.1);margin:12px 0}
+/* roadmap */
+.road{list-style:none;padding:0;margin:0}
+.road li{border:1px solid var(--steel2);background:var(--bg2);padding:16px 18px;margin-bottom:14px;position:relative;padding-left:64px}
+.road li::before{content:attr(data-n);position:absolute;left:16px;top:14px;color:var(--bg);background:var(--green);width:32px;height:32px;text-align:center;line-height:32px;font-weight:bold}
+.road b{color:var(--amber);text-transform:uppercase}
+footer{border-top:3px double var(--steel2);padding:36px 0;text-align:center;color:var(--dim);font-size:.85rem;background:#090b0a}
+footer .soc a{margin:0 8px}
+.blink{animation:b 1.1s steps(2) infinite}
+@keyframes b{50%{opacity:0}}
+@media(max-width:600px){body{font-size:15px}section{padding:38px 0}.manual{padding:14px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="top-panel">
+<img src="img/coverPhoto.png" alt="New Eden: Survival Wasteland">
+</div>
+<div class="wrap">
+<div class="tag">// 90s Retro Post-Apo Colony Sim //</div>
+<h1>New Eden: Survival Wasteland</h1>
+<p class="lead">The world ended. Your settlement did not. Lead a handful of scarred survivors, keep them fed, sane and armed, and turn a rusted wasteland into a new Eden<span class="blink">_</span></p>
+<div class="cta">
+<a class="btn" href="https://play.google.com/store/apps/details?id=com.Frostworks_PL.NewEden" target="_blank" rel="noopener">&#9654; Get it on Google Play</a>
+<a class="btn alt" href="https://www.patreon.com/cw/NewEdenSurvivalWasteland" target="_blank" rel="noopener">&#9829; Support on Patreon</a>
+</div>
+<div class="video">
+loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;
+</div>
+</div>
+</header>
+
+<nav aria-label="Quick navigation">
+<div class="wrap">
+<a href="https://play.google.com/store/apps/details?id=com.Frostworks_PL.NewEden" target="_blank" rel="noopener">Google Play</a>
+<a href="https://youtu.be/lHU7vyvSC9k" target="_blank" rel="noopener">YouTube</a>
+<a href="https://www.patreon.com/cw/NewEdenSurvivalWasteland" target="_blank" rel="noopener">Patreon</a>
+<a href="https://discord.gg/KgprKDjhY" target="_blank" rel="noopener">Discord</a>
+<a href="#manifesto">Manifesto</a>
+<a href="#manual">Field Manual</a>
+<a href="#roadmap">Roadmap</a>
+<a href="index_pl.html" hreflang="pl">&#127477;&#127473; Polski</a>
+</div>
+</nav>
+
+<main>
+<section id="manifesto">
+<div class="wrap">
+<h2>The Wasteland Manifesto</h2>
+<div class="grid">
+<div class="card"><h3>Survivor Psychology</h3><p>Every settler has traits, needs, moods and a wallet. Good or bad, peaceful or restless, frugal or lavish. Ignore them and they quarrel, slack off, or walk out the gate.</p></div>
+<div class="card"><h3>Settlement Management</h3><p>Lay out buildings on a grid, assign workers, keep the generators running, pay wages and feed everyone. Every system feeds the next one.</p></div>
+<div class="card"><h3>Risk vs. Reward</h3><p>Expeditions bring loot, experience and rumors, and sometimes wounded people or no return at all. Beasts, bandits and radiation do not care about your plans.</p></div>
+</div>
+<div class="shots">
+<figure><img src="img/manage_eng.png" alt="Settlement management screen" loading="lazy"><figcaption>Manage your settlement</figcaption></figure>
+<figure><img src="img/wildness_eng.png" alt="Wilderness exploration screen" loading="lazy"><figcaption>Brave the wilderness</figcaption></figure>
+<figure><img src="img/story_eng.png" alt="Story and encounters screen" loading="lazy"><figcaption>Stories from the road</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section id="manual">
+<div class="wrap">
+<div class="manual">
+<h2>Field Manual</h2>
+<p><strong>Survivor's Handbook, Rev. 1990-something.</strong> Read it before the first winter.</p>
+<ol class="toc">
+<li><a href="#c1">Time &amp; the World</a></li>
+<li><a href="#c2">Your Settlement &amp; Buildings</a></li>
+<li><a href="#c3">Settlers, Skills &amp; Experience</a></li>
+<li><a href="#c4">Morale &amp; Psychology</a></li>
+<li><a href="#c5">Needs &amp; Services</a></li>
+<li><a href="#c6">Economy &amp; Production</a></li>
+<li><a href="#c7">Electricity</a></li>
+<li><a href="#c8">Wages</a></li>
+<li><a href="#c9">Health &amp; Illness</a></li>
+<li><a href="#c10">Expeditions &amp; Scavenging</a></li>
+<li><a href="#c11">Encounters</a></li>
+<li><a href="#c12">Trade &amp; Gossip</a></li>
+<li><a href="#c13">Combat</a></li>
+<li><a href="#c14">Fortification &amp; Defense</a></li>
+<li><a href="#c15">Plunder &amp; Conquest</a></li>
+<li><a href="#c16">Beasts &amp; Hives</a></li>
+<li><a href="#c17">Survival Tips</a></li>
+</ol>
+
+<details id="c1" open><summary>01 // Time &amp; the World</summary><div>
+<p>One tick is one real minute, about <b>3 minutes of game time</b>. The world runs three times faster than real life: one real hour is three game hours.</p>
+<ul>
+<li><b>Hourly:</b> electricity, illness and encounter checks.</li>
+<li><b>Daily:</b> wages, paid in the evening around 17:00.</li>
+<li>Settlers sleep at night, travel is riskier, and wounded people resting at home slowly heal.</li>
+<li>The world goes on while you are away. Check the message log when you return.</li>
+<li>Some modes grant a protection period with no attacks. Trial games end after a set number of days.</li>
+</ul>
+<p>The map is split into <b>sectors</b> with <b>settlements</b>, ruins, wilderness and more. You only see what lies within the sight range of your settlements and groups. <b>Perception</b>, <b>Stealth</b> and <b>Spying</b> decide who spots whom.</p>
+</div></details>
+
+<details id="c2"><summary>02 // Your Settlement &amp; Buildings</summary><div>
+<p>A settlement has a grid of cells (some blocked by ruins, junk, rocks or trees), settlers, a storage for goods and cash, economic settings, electricity and buildings. Each building has <b>locators</b>: slots for a worker or a resident.</p>
+<div class="tbl"><table>
+<tr><th>Kind</th><th>Role</th></tr>
+<tr><td>Control</td><td>Town Hall, Storehouse, Sheriff, Expeditions</td></tr>
+<tr><td>Tech</td><td>Workshop, Blacksmith, Gunsmith, Electronics, Laboratory</td></tr>
+<tr><td>Living / Rent</td><td>House, Tent, Dormitory, Mansion / Motel, Hotel</td></tr>
+<tr><td>Food</td><td>Farm, Breeding, Windmill</td></tr>
+<tr><td>Common / Gastronomy / Pastime</td><td>Shop, Marketplace, School, Church / Restaurant / Bar, Game Room, Casino</td></tr>
+<tr><td>Medic</td><td>Drugstore, Policlinic, Hospital</td></tr>
+<tr><td>Energy</td><td>Manual, Diesel, Solar generators</td></tr>
+<tr><td>Defence</td><td>Fence, Wall, Blockpost, Bunker, Watchtower, Traps, Minefield, Alarm</td></tr>
+</table></div>
+<ul>
+<li><b>Workplaces need qualified workers.</b> Without one, the building is idle.</li>
+<li>Some buildings need <b>power</b>, some need <b>supplies</b> (a bar needs drinks, a restaurant needs food).</li>
+<li><b>Foundations</b> cost about 10 times more work to build or remove.</li>
+<li>Damaged buildings work worse or not at all until repaired. Some cannot be repaired.</li>
+</ul>
+<h3>Building, renovating, demolishing</h3>
+<p>Construction needs <b>materials</b> from storage and <b>labor</b> from workers with the right skill (Architecture, Mechanics, Electronics, Chemistry, Farmer, and Strength helps). Work scales with complexity, size and material weight. You can renovate or upgrade damaged buildings. Demolition is a bit faster than building and may return part of the materials. Stopping work keeps the progress.</p>
+</div></details>
+
+<details id="c3"><summary>03 // Settlers, Skills &amp; Experience</summary><div>
+<p>Every settler has physical traits (Strength, Perception, Agility, Courage, Cuteness), four mental scales (Good↔Bad, Peaceful↔Restless, Frugal↔Lavish, Generous↔Greedy), skills, a profession, an experience level, health and their own cash.</p>
+<ul>
+<li>New people may ask to join. Check skills, attitude and free housing first.</li>
+<li>Unhappy settlers may want to leave. Exiling people hurts the mood of others.</li>
+<li>When a settler dies, their belongings may go to the settlement, and loved ones grieve.</li>
+</ul>
+<h3>Skills</h3>
+<p>Combat, Gun, Heavy Weapons, Explosive, Hurling Weapon, Tactics, Climbing, Driver, Pathfinder, Survival, Trade, Speaker, Farmer, Mechanics, Electronics, Chemistry, Gambling, Medicine, Architecture, Thievery, Stealth, Spying, Knowledge. Skills improve with use across ten levels.</p>
+<h3>Professions &amp; Experience</h3>
+<p>Professions (Chemist, Trader, Medic, Mercenary, Hunter, Thief, Soldier, Spy and more) hint at starting skills.<br>
+Levels: Greenhorn → Learner → Helper → Doer → Skilled → Veteran → Expert → Master → Leader → Pioneer.</p>
+</div></details>
+
+<details id="c4"><summary>04 // Morale &amp; Psychology</summary><div>
+<p>Each settler has a happiness score. <b>Happy settlers</b> work well and stay. <b>Unhappy settlers</b> work poorly, leave or cause trouble.</p>
+<div class="tbl"><table>
+<tr><th>Cause</th><th>Effect</th></tr>
+<tr><td>Needs</td><td>Meeting a need cheers them up. Ignoring it makes them angry.</td></tr>
+<tr><td>Housing</td><td>No home is bad. Better housing is better.</td></tr>
+<tr><td>Job</td><td>A job they like helps. Changing jobs affects mood.</td></tr>
+<tr><td>Wages</td><td>Late or low pay causes anger.</td></tr>
+<tr><td>Public buildings</td><td>Church, school and similar help.</td></tr>
+<tr><td>Gifts</td><td>Giving an item cheers someone up.</td></tr>
+<tr><td>Conquest / plunder</td><td>Winning boosts morale. Having home plundered hurts it.</td></tr>
+<tr><td>Loot distribution</td><td>Unfair sharing breeds resentment.</td></tr>
+<tr><td>Injury, exile, boredom</td><td>Injured, restless or upset-by-exile settlers lose mood.</td></tr>
+</table></div>
+<div class="note">Personality matters: restless people get bored of the same place, and lavish people expect better services.</div>
+</div></details>
+
+<details id="c5"><summary>05 // Needs &amp; Services</summary><div>
+<p>Settlers spend their own money on needs. A working building for a need earns you money. A missing or closed one makes people unhappy.</p>
+<div class="tbl"><table>
+<tr><th>Need</th><th>Building</th></tr>
+<tr><td>Items, weapons, armor</td><td>Shop, Marketplace, Gunsmith, Blacksmith</td></tr>
+<tr><td>Repairs</td><td>Workshop, Blacksmith</td></tr>
+<tr><td>Drinks / meals</td><td>Bar / Restaurant</td></tr>
+<tr><td>Entertainment</td><td>Game Room, Casino, Whorehouse</td></tr>
+<tr><td>Faith / learning</td><td>Church / School</td></tr>
+<tr><td>Medical care</td><td>Drugstore, Policlinic, Hospital</td></tr>
+<tr><td>Rest</td><td>Barracks, Dormitory, Motel, Hotel</td></tr>
+</table></div>
+<p>Services need workers, power (some) and supplies. The economy is processed once per turn: each settler checks needs, finds a matching building and pays.</p>
+</div></details>
+
+<details id="c6"><summary>06 // Economy &amp; Production</summary><div>
+<p>Item types: Food, Mechanical, Electronic, Chemical, Armor, Ammunition, Weapons, Fuel, Transport. From mech parts and tools to Uzis, AK-47s, grenade launchers, bulletproof vests, mules and horses.</p>
+<ul>
+<li><b>Production:</b> needs the right building, materials in storage and a worker with the right skill. Stop any time.</li>
+<li><b>Storage:</b> everything sits in one storage. Cash is kept in denominations and pays wages and trade.</li>
+<li><b>Food</b> is eaten regularly. Running out hurts mood and health.</li>
+<li><b>Condition:</b> weapons and tools wear out. Use repair services.</li>
+<li>The world has its own economy, reported globally.</li>
+</ul>
+</div></details>
+
+<details id="c7"><summary>07 // Electricity</summary><div>
+<ul>
+<li><b>Manual generator:</b> one worker gives 1 unit, two or more give 2.</li>
+<li><b>Diesel generator:</b> burns fuel from storage every hour. No fuel, no power.</li>
+<li><b>Solar, wind, power stations:</b> no fuel needed.</li>
+<li>Power is checked <b>every hour</b>. If production is below demand, some buildings shut down.</li>
+</ul>
+<div class="note">Plan capacity before building lots of powered buildings, and keep fuel stocked.</div>
+</div></details>
+
+<details id="c8"><summary>08 // Wages</summary><div>
+<ul>
+<li>Paid once a day in the evening (17:00) from settlement cash.</li>
+<li>Three rates: <b>builders and workers</b>, <b>guards</b>, <b>scientists</b>.</li>
+<li>Unpaid workers get angry. Higher wages cheer them but drain money.</li>
+<li>Wages are not paid while the settlement is under attack.</li>
+</ul>
+</div></details>
+
+<details id="c9"><summary>09 // Health, Illness &amp; Injuries</summary><div>
+<ul>
+<li>Injuries reduce performance. Rest, medicine and medical buildings heal them.</li>
+<li>Conditions: Radiated, Poisoned, Sick, Plague. Illness strikes on average about once per six hours and spreads.</li>
+<li>Medical staff (Medicine skill) with tools and a drugstore, policlinic or hospital help.</li>
+<li>Wounded fighters must recover before going out again.</li>
+</ul>
+</div></details>
+
+<details id="c10"><summary>10 // Expeditions &amp; Scavenging</summary><div>
+<p>A <b>group</b> is a team of settlers travelling together, carrying their own items and cash. Send them out through the <b>Expeditions</b> building.</p>
+<ul>
+<li>Set a destination, or set off right away.</li>
+<li><b>Rate of march:</b> Standstill, Slow, Normal, Fast. Faster is quicker but riskier.</li>
+<li>Pathfinder and Driver skills, vehicles and animals help travel.</li>
+<li>When they return, you resolve loot, injuries, experience and moods.</li>
+</ul>
+<div class="tbl"><table>
+<tr><th>Attitude</th><th>Behavior</th></tr>
+<tr><td>Tradesman</td><td>Never attacks</td></tr>
+<tr><td>Scout</td><td>Avoids contact, tries to escape</td></tr>
+<tr><td>Spy</td><td>Does not attack</td></tr>
+<tr><td>Bounty Hunter</td><td>Attacks only criminals</td></tr>
+<tr><td>Defender</td><td>Attacks only enemies</td></tr>
+<tr><td>Invader</td><td>Attacks anyone not an ally</td></tr>
+<tr><td>Bandit</td><td>Attacks everyone</td></tr>
+<tr><td>Negotiators</td><td>Try to talk first</td></tr>
+</table></div>
+<img src="img/explore_eng.png" alt="Exploration screen" loading="lazy" style="margin-top:12px;border:2px solid #8c7a4a">
+</div></details>
+
+<details id="c11"><summary>11 // Encounters</summary><div>
+<p>Travelling or near home you may meet friendly or hostile travelers, wild beasts, hazards such as radiation, useful finds, or illness. Results depend partly on <b>skill tests</b> (Survival, Perception, Agility, Knowledge). Groups that meet on the map can collide: an encounter, a trade chance, a fight, or a chance to slip past.</p>
+</div></details>
+
+<details id="c12"><summary>12 // Trade &amp; Gossip</summary><div>
+<ul>
+<li><b>Own shop:</b> sell to your settlers.</li>
+<li><b>Group barter:</b> swap items between group and settlement.</li>
+<li><b>Foreign shops:</b> trade with other settlements.</li>
+<li><b>Trade</b> and <b>Speaker</b> skills improve prices. Value depends on weight, rarity and condition.</li>
+<li><b>Gossip:</b> pay in a bar to learn about nearby locations, groups and people. A better bar means better information.</li>
+</ul>
+<img src="img/inventory_eng.png" alt="Inventory screen" loading="lazy" style="margin-top:12px;border:2px solid #8c7a4a">
+</div></details>
+
+<details id="c13"><summary>13 // Combat</summary><div>
+<p>Fight <b>player-controlled</b> (you see the field and give orders) or <b>automatic</b> (the game resolves it). Fighters form <b>squads</b> as attackers or defenders. You can take command, join a squad, set targets or retreat.</p>
+<ul>
+<li><b>Actions:</b> Move, Enter Combat, Shoot (single, short burst, burst, continuous: more shots mean less accuracy and more ammo), Reload, Switch weapon, Hide.</li>
+<li><b>Weapons:</b> melee, ranged, heavy. Range and ammo count.</li>
+<li><b>Armor</b> reduces damage. <b>Walls and obstacles</b> block movement and sight.</li>
+<li><b>Skills:</b> Combat, Gun, Heavy Weapons, Hurling, Tactics, Explosive. <b>Traits:</b> Agility, Perception, Courage, Strength.</li>
+<li>Badly wounded fighters can be incapacitated or killed. Low morale and courage make fighters flee.</li>
+<li><b>After the battle:</b> the winner loots, survivors gain experience, the fallen sour the mood, and a battle report shows what happened.</li>
+</ul>
+</div></details>
+
+<details id="c14"><summary>14 // Fortification &amp; Defense</summary><div>
+<p>During a battle at your settlement, routines like wages, electricity and illness are <b>paused</b>.</p>
+<ul>
+<li>Barriers (fence, wall, blockpost) block movement, and some also block sight. Design defenses deliberately.</li>
+<li>Use guard posts, watchtowers, traps and minefields.</li>
+<li>Keep armed, trained settlers at home and pay guards on time.</li>
+<li>Beasts attack settlements too. Plan for guards if your area is infested.</li>
+</ul>
+</div></details>
+
+<details id="c15"><summary>15 // Plunder &amp; Conquest</summary><div>
+<ul>
+<li><b>Plunder:</b> send a group to raid buildings for goods. Thievery, Stealth and Perception help.</li>
+<li><b>Conquer:</b> defeat the defenders and the location is yours, which cheers settlers.</li>
+<li>If your own home is plundered, settlers get angry.</li>
+<li>Locations can be damaged, destroyed or left as ruins.</li>
+</ul>
+</div></details>
+
+<details id="c16"><summary>16 // Beasts &amp; Hives</summary><div>
+<p>Rats, crocodiles, mutants, wild dogs, giant ants, cannibals, big cats, birds, monsters and combat robots. They live in <b>hives</b>, send out groups, and hives grow and spread over time. <b>Destroying a hive</b> stops the nearby threat and may reward you.</p>
+</div></details>
+
+<details id="c17"><summary>17 // Survival Tips &amp; Game Over</summary><div>
+<p><b>You lose</b> when you have no settlements or no people able to continue, or when the trial period ends (trial games only).</p>
+<ol>
+<li>Food, housing and power first.</li>
+<li>Watch happiness and fix causes early.</li>
+<li>Diversify skills: a builder, a medic, a trader and some fighters.</li>
+<li>Defend smart: barriers, towers, armed settlers at home.</li>
+<li>Pay wages on time and keep a cash reserve.</li>
+<li>Do not over-expand. Every building costs workers, power and upkeep.</li>
+<li>Mind the night.</li>
+<li>Scout before plundering.</li>
+<li>Repair your gear.</li>
+</ol>
+</div></details>
+</div>
+</div>
+</section>
+
+<section id="roadmap">
+<div class="wrap">
+<h2>Development Roadmap // What Are We Funding?</h2>
+<p>Every contribution on Patreon directly buys development time, high-quality graphics and sound assets, turning our core build into a massive post-apocalyptic universe.</p>
+<ul class="road">
+<li data-n="1"><b>Underground Dungeons, Caves &amp; Mines</b><br>New subterranean locations to explore, rare resources and unique subterranean hazards.</li>
+<li data-n="2"><b>Deep Mission System</b><br>Story-driven quests and dynamic narrative events.</li>
+<li data-n="3"><b>Settlement Conquest</b><br>Mechanics for raiding, territory expansion and wasteland diplomacy.</li>
+<li data-n="4"><b>New Victory Condition: World Domination</b><br>Conquer the entire wasteland instead of just surviving.</li>
+<li data-n="5"><b>Faction System</b><br>Join global conflicts, fight for influence and climb faction hierarchies.</li>
+<li data-n="6"><b>Real-time Multiplayer</b><br>Compete or cooperate with other Leaders in real time.</li>
+</ul>
+<h3>Stretch Goals</h3>
+<ul>
+<li>Supply Escort Missions &amp; Trade Caravans</li>
+<li>Armed Combat Vehicles</li>
+<li>Additional Language Localizations</li>
+</ul>
+<div class="cta"><a class="btn alt" href="https://www.patreon.com/cw/NewEdenSurvivalWasteland" target="_blank" rel="noopener">&#9829; Join the Patreon</a></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<img src="img/icon.png" alt="" width="64" height="64" style="margin:0 auto 12px;border-radius:50%">
+<p class="soc">
+<a href="https://play.google.com/store/apps/details?id=com.Frostworks_PL.NewEden" target="_blank" rel="noopener">Google Play</a>
+<a href="https://youtu.be/lHU7vyvSC9k" target="_blank" rel="noopener">YouTube</a>
+<a href="https://www.patreon.com/cw/NewEdenSurvivalWasteland" target="_blank" rel="noopener">Patreon</a>
+<a href="https://discord.gg/KgprKDjhY" target="_blank" rel="noopener">Discord</a>
+</p>
+<p>Designed, programmed and drawn by a single developer. Made with coffee and radiation.</p>
+<p>&copy; <span id="y">2025</span> New Eden: Survival Wasteland. All rights reserved. Google Play is a trademark of Google LLC.</p>
+</div>
+</footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+</body>
+</html>

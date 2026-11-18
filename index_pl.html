@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Eden: Survival Wasteland – Oficjalny podręcznik polowy</title>
+<meta name="description" content="New Eden: Survival Wasteland – retro symulator kolonii post-apo w stylu lat 90. na telefony. Oficjalny podręcznik polowy.">
+<style>
+:root{--bg:#0d0f0e;--bg2:#161a19;--steel:#2b3330;--steel2:#3c4742;--amber:#ffb000;--green:#4cff7a;--text:#c9d1c3;--dim:#8a948a;--paper:#d8c9a0;--ink:#2a2418}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Courier New",Consolas,monospace;line-height:1.65;font-size:16px;
+background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0 1px,transparent 1px 3px)}
+a{color:var(--amber)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+h1,h2,h3{text-transform:uppercase;letter-spacing:.08em;margin:0 0 .6em}
+h2{color:var(--amber);font-size:1.7rem;border-bottom:2px dashed var(--steel2);padding-bottom:.3em}
+h2::before{content:"> ";color:var(--green)}
+h3{color:var(--green);font-size:1.1rem}
+section{padding:56px 0}
+.btn{display:inline-block;padding:14px 22px;border:2px solid var(--amber);color:var(--amber);text-decoration:none;text-transform:uppercase;font-weight:bold;letter-spacing:.1em;background:rgba(255,176,0,.06);transition:.15s}
+.btn:hover,.btn:focus{background:var(--amber);color:#000;outline:none}
+.btn.alt{border-color:var(--green);color:var(--green);background:rgba(76,255,122,.06)}
+.btn.alt:hover,.btn.alt:focus{background:var(--green);color:#000}
+/* hero */
+header{text-align:center;padding:40px 0 30px;background:radial-gradient(ellipse at top,#1d2422,var(--bg) 70%);border-bottom:3px double var(--steel2)}
+.top-panel{position:relative;width:100%;max-width:1400px;margin:-40px auto 22px;border-bottom:3px solid var(--steel2)}
+.top-panel img{width:100%;max-height:85vh;object-fit:cover;object-position:center}
+.top-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,var(--bg)),linear-gradient(to right,var(--bg),transparent 15%,transparent 85%,var(--bg));pointer-events:none}
+.logo-ph{border:2px dashed var(--steel2);padding:28px;color:var(--dim)}
+.tag{color:var(--green);letter-spacing:.2em;text-transform:uppercase;font-size:.9rem}
+header h1{font-size:clamp(1.8rem,5vw,3.2rem);color:var(--amber);text-shadow:0 0 12px rgba(255,176,0,.45);margin:.2em 0}
+.lead{max-width:700px;margin:0 auto 24px;color:var(--text)}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.video{position:relative;max-width:860px;margin:28px auto 0;aspect-ratio:16/9;border:3px solid var(--steel2);box-shadow:0 0 30px rgba(76,255,122,.15)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(13,15,14,.95);border-bottom:1px solid var(--steel2);backdrop-filter:blur(4px)}
+nav .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;padding:10px 18px}
+nav a{color:var(--text);text-decoration:none;text-transform:uppercase;font-size:.85rem;letter-spacing:.1em;padding:4px 8px;border:1px solid transparent}
+nav a:hover{border-color:var(--amber);color:var(--amber)}
+/* cards */
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--bg2);border:1px solid var(--steel2);border-left:4px solid var(--amber);padding:20px}
+.shots{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:30px}
+.shots figure{margin:0;border:2px solid var(--steel2);background:#000}
+.shots figcaption{padding:6px 10px;font-size:.8rem;color:var(--dim);text-transform:uppercase}
+/* manual */
+.manual{background:var(--paper);color:var(--ink);padding:26px;border:1px solid #8c7a4a;box-shadow:inset 0 0 60px rgba(90,60,10,.35),0 0 0 4px var(--steel)}
+.manual h2{color:#5a2d00;border-color:#8c7a4a}
+.manual h2::before{color:#a03000}
+.manual h3{color:#7a2a00}
+.manual a{color:#7a2a00}
+.toc{columns:2 240px;padding-left:1.2em;margin:0 0 24px}
+details{border:1px solid #8c7a4a;margin:10px 0;background:rgba(255,255,255,.18)}
+summary{cursor:pointer;padding:12px 14px;font-weight:bold;text-transform:uppercase;letter-spacing:.06em;background:rgba(90,60,10,.15)}
+summary:hover{background:rgba(90,60,10,.3)}
+details>div{padding:4px 18px 16px}
+.manual table{border-collapse:collapse;width:100%;margin:10px 0;font-size:.9rem}
+.manual th,.manual td{border:1px solid #8c7a4a;padding:6px 8px;text-align:left;vertical-align:top}
+.manual th{background:rgba(90,60,10,.25)}
+.tbl{overflow-x:auto}
+.note{border-left:4px solid #a03000;padding:6px 12px;background:rgba(160,48,0,.1);margin:12px 0}
+/* roadmap */
+.road{list-style:none;padding:0;margin:0}
+.road li{border:1px solid var(--steel2);background:var(--bg2);padding:16px 18px;margin-bottom:14px;position:relative;padding-left:64px}
+.road li::before{content:attr(data-n);position:absolute;left:16px;top:14px;color:var(--bg);background:var(--green);width:32px;height:32px;text-align:center;line-height:32px;font-weight:bold}
+.road b{color:var(--amber);text-transform:uppercase}
+footer{border-top:3px double var(--steel2);padding:36px 0;text-align:center;color:var(--dim);font-size:.85rem;background:#090b0a}
+footer .soc a{margin:0 8px}
+.blink{animation:b 1.1s steps(2) infinite}
+@keyframes b{50%{opacity:0}}
+@media(max-width:600px){body{font-size:15px}section{padding:38px 0}.manual{padding:14px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="top-panel">
+<img src="img/coverPhoto.png" alt="New Eden: Survival Wasteland">
+</div>
+<div class="wrap">
+<div class="tag">// Retro symulator kolonii post-apo w stylu lat 90. //</div>
+<h1>New Eden: Survival Wasteland</h1>
+<p class="lead">Świat się skończył. Twoja osada nie. Poprowadź garstkę poranionych ocalałych, dbaj o ich głód, zdrowie psychiczne i uzbrojenie, a rdzewiejącą pustkowie zamień w nowy Eden<span class="blink">_</span></p>
+<div class="cta">
+<a class="btn" href="https://play.google.com/store/apps/details?id=com.Frostworks_PL.NewEden" target="_blank" rel="noopener">&#9654; Pobierz z Google Play</a>
+<a class="btn alt" href="https://www.patreon.com/cw/NewEdenSurvivalWasteland" target="_blank" rel="noopener">&#9829; Wesprzyj na Patreonie</a>
+<a class="btn" href="https://youtu.be/lHU7vyvSC9k" target="_blank" rel="noopener">&#9654; Zwiastun</a>
+</div>
+</div>
+</header>
+
+<nav aria-label="Szybka nawigacja">
+<div class="wrap">
+<a href="https://play.google.com/store/apps/details?id=com.Frostworks_PL.NewEden" target="_blank" rel="noopener">Google Play</a>
+<a href="https://youtu.be/lHU7vyvSC9k" target="_blank" rel="noopener">YouTube</a>
+<a href="https://www.patreon.com/cw/NewEdenSurvivalWasteland" target="_blank" rel="noopener">Patreon</a>
+<a href="https://discord.gg/KgprKDjhY" target="_blank" rel="noopener">Discord</a>
+<a href="#manifesto">Manifest</a>
+<a href="#manual">Podręcznik</a>
+<a href="#roadmap">Plan rozwoju</a>
+<a href="index.html" hreflang="en">&#127468;&#127463; English</a>
+</div>
+</nav>
+
+<main>
+<section id="manifesto">
+<div class="wrap">
+<h2>Manifest Pustkowi</h2>
+<div class="grid">
+<div class="card"><h3>Psychika ocalałych</h3><p>Każdy osadnik ma cechy, potrzeby, nastroje i portfel. Dobry lub zły, spokojny lub niespokojny, oszczędny lub rozrzutny. Zignoruj ich, a zaczną się kłócić, unikać pracy albo wyjdą za bramę.</p></div>
+<div class="card"><h3>Zarządzanie osadą</h3><p>Rozmieszczaj budynki na siatce, przydzielaj pracowników, pilnuj generatorów, płać pensje i karm wszystkich. Każdy system napędza kolejny.</p></div>
+<div class="card"><h3>Ryzyko i nagroda</h3><p>Wyprawy przynoszą łupy, doświadczenie i plotki, a czasem rannych lub brak powrotu. Bestie, bandyci i promieniowanie nie dbają o twoje plany.</p></div>
+</div>
+<div class="shots">
+<figure><img src="img/manage_eng.png" alt="Ekran zarządzania osadą" loading="lazy"><figcaption>Zarządzaj osadą</figcaption></figure>
+<figure><img src="img/wildness_eng.png" alt="Ekran eksploracji pustkowi" loading="lazy"><figcaption>Stań twarzą w twarz z pustkowiem</figcaption></figure>
+<figure><img src="img/story_eng.png" alt="Ekran historii i spotkań" loading="lazy"><figcaption>Historie z drogi</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section id="manual">
+<div class="wrap">
+<div class="manual">
+<h2>Podręcznik polowy</h2>
+<p><strong>Poradnik ocalałego, wyd. 1990-którysś.</strong> Przeczytaj przed pierwszą zimą.</p>
+<ol class="toc">
+<li><a href="#c1">Czas i świat</a></li>
+<li><a href="#c2">Osada i budynki</a></li>
+<li><a href="#c3">Osadnicy, umiejętności i doświadczenie</a></li>
+<li><a href="#c4">Morale i psychika</a></li>
+<li><a href="#c5">Potrzeby i usługi</a></li>
+<li><a href="#c6">Ekonomia i produkcja</a></li>
+<li><a href="#c7">Elektryczność</a></li>
+<li><a href="#c8">Pensje</a></li>
+<li><a href="#c9">Zdrowie i choroby</a></li>
+<li><a href="#c10">Wyprawy i zbieractwo</a></li>
+<li><a href="#c11">Spotkania</a></li>
+<li><a href="#c12">Handel i plotki</a></li>
+<li><a href="#c13">Walka</a></li>
+<li><a href="#c14">Fortyfikacje i obrona</a></li>
+<li><a href="#c15">Grabież i podbój</a></li>
+<li><a href="#c16">Bestie i gniazda</a></li>
+<li><a href="#c17">Porady przetrwania</a></li>
+</ol>
+
+<details id="c1" open><summary>01 // Czas i świat</summary><div>
+<p>Jeden tick to jedna minuta rzeczywista, czyli około <b>3 minuty czasu gry</b>. Świat płynie trzy razy szybciej niż rzeczywistość: jedna godzina to trzy godziny w grze.</p>
+<ul>
+<li><b>Co godzinę:</b> sprawdzanie prądu, chorób i spotkań.</li>
+<li><b>Codziennie:</b> pensje, wypłacane wieczorem około 17:00.</li>
+<li>Osadnicy śpią w nocy, podróż jest wtedy groźniejsza, a ranni odpoczywający w domu powoli zdrowieją.</li>
+<li>Świat toczy się dalej, gdy cię nie ma. Po powrocie sprawdź dziennik wiadomości.</li>
+<li>Niektóre tryby dają okres ochronny bez ataków. Gry próbne kończą się po określonej liczbie dni.</li>
+</ul>
+<p>Mapa jest podzielona na <b>sektory</b> z <b>osadami</b>, ruinami, pustkowiami i innymi miejscami. Widzisz tylko to, co mieści się w zasięgu wzroku twoich osad i grup. <b>Percepcja</b>, <b>Skradanie</b> i <b>Szpiegostwo</b> decydują, kto kogo zauważy.</p>
+</div></details>
+
+<details id="c2"><summary>02 // Osada i budynki</summary><div>
+<p>Osada ma siatkę pól (część zablokowana przez ruiny, śmieci, skały lub drzewa), osadników, magazyn towarów i gotówki, ustawienia ekonomiczne, elektryczność i budynki. Każdy budynek ma <b>miejsca</b> dla pracownika lub mieszkańca.</p>
+<div class="tbl"><table>
+<tr><th>Rodzaj</th><th>Rola</th></tr>
+<tr><td>Zarządzanie</td><td>Ratusz, Magazyn, Szeryf, Wyprawy</td></tr>
+<tr><td>Technologia</td><td>Warsztat, Kowal, Rusznikarz, Elektronika, Laboratorium</td></tr>
+<tr><td>Mieszkalne / Wynajem</td><td>Dom, Namiot, Dormitorium, Rezydencja / Motel, Hotel</td></tr>
+<tr><td>Żywność</td><td>Farma, Hodowla, Wiatrak</td></tr>
+<tr><td>Wspólne / Gastronomia / Rozrywka</td><td>Sklep, Targowisko, Szkoła, Kościół / Restauracja, Bar, Salon gier, Kasyno</td></tr>
+<tr><td>Medyczne</td><td>Apteka, Przychodnia, Szpital</td></tr>
+<tr><td>Energia</td><td>Generatory ręczne, diesla, słoneczne</td></tr>
+<tr><td>Obrona</td><td>Płot, Mur, Posterunek, Bunkier, Wieża, Pułapki, Pole minowe, Alarm</td></tr>
+</table></div>
+<ul>
+<li><b>Miejsca pracy wymagają wykwalifikowanych pracowników.</b> Bez nich budynek stoi bezczynnie.</li>
+<li>Niektóre budynki potrzebują <b>prądu</b>, inne <b>zaopatrzenia</b> (bar potrzebuje napojów, restauracja jedzenia).</li>
+<li><b>Fundamenty</b> kosztują około 10 razy więcej pracy przy budowie lub rozbiórce.</li>
+<li>Uszkodzone budynki działają gorzej lub wcale, dopóki nie zostaną naprawione. Niektórych nie da się naprawić.</li>
+</ul>
+<h3>Budowa, remont, rozbiórka</h3>
+<p>Budowa wymaga <b>materiałów</b> z magazynu i <b>pracy</b> osadników z odpowiednią umiejętnością (Architektura, Mechanika, Elektronika, Chemia, Rolnictwo, pomaga też Siła). Nakład pracy zależy od złożoności, rozmiaru i wagi materiałów. Uszkodzone budynki można remontować lub ulepszać. Rozbiórka jest nieco szybsza od budowy i może zwrócić część materiałów. Wstrzymanie pracy zachowuje postęp.</p>
+</div></details>
+
+<details id="c3"><summary>03 // Osadnicy, umiejętności i doświadczenie</summary><div>
+<p>Każdy osadnik ma cechy fizyczne (Siła, Percepcja, Zwinność, Odwaga, Urok), cztery skale psychiczne (Dobry↔Zły, Spokojny↔Niespokojny, Oszczędny↔Rozrzutny, Hojny↔Chciwy), umiejętności, zawód, poziom doświadczenia, zdrowie i własną gotówkę.</p>
+<ul>
+<li>Nowi ludzie mogą prosić o przyjęcie. Najpierw sprawdź umiejętności, nastawienie i wolne mieszkania.</li>
+<li>Niezadowoleni osadnicy mogą chcieć odejść. Wygnanie kogoś psuje nastrój pozostałych.</li>
+<li>Gdy osadnik umiera, jego rzeczy mogą trafić do osady, a bliscy go opłakują.</li>
+</ul>
+<h3>Umiejętności</h3>
+<p>Walka wręcz, Strzelectwo, Broń ciężka, Materiały wybuchowe, Broń miotana, Taktyka, Wspinaczka, Prowadzenie pojazdów, Tropiciel, Przetrwanie, Handel, Krasomówstwo, Rolnictwo, Mechanika, Elektronika, Chemia, Hazard, Medycyna, Architektura, Złodziejstwo, Skradanie, Szpiegostwo, Wiedza. Umiejętności rosną z użyciem przez dziesięć poziomów.</p>
+<h3>Zawody i doświadczenie</h3>
+<p>Zawody (Chemik, Handlarz, Medyk, Najemnik, Myśliwy, Złodziej, Żołnierz, Szpieg i inne) podpowiadają startowe umiejętności.<br>
+Poziomy: Żółtodziób → Uczeń → Pomocnik → Wykonawca → Biegły → Weteran → Ekspert → Mistrz → Przywódca → Pionier.</p>
+</div></details>
+
+<details id="c4"><summary>04 // Morale i psychika</summary><div>
+<p>Każdy osadnik ma wskaźnik szczęścia. <b>Szczęśliwi osadnicy</b> dobrze pracują i zostają. <b>Nieszczęśliwi</b> pracują słabo, odchodzą lub sprawiają kłopoty.</p>
+<div class="tbl"><table>
+<tr><th>Przyczyna</th><th>Skutek</th></tr>
+<tr><td>Potrzeby</td><td>Zaspokojona potrzeba poprawia humor. Ignorowanie jej wywołuje gniew.</td></tr>
+<tr><td>Mieszkanie</td><td>Brak domu jest złem. Lepsze mieszkanie to lepszy nastrój.</td></tr>
+<tr><td>Praca</td><td>Lubiana praca pomaga. Zmiana pracy wpływa na nastrój.</td></tr>
+<tr><td>Pensje</td><td>Spóźnione lub niskie wypłaty wywołują gniew.</td></tr>
+<tr><td>Budynki publiczne</td><td>Kościół, szkoła i podobne pomagają.</td></tr>
+<tr><td>Prezenty</td><td>Podarowanie przedmiotu poprawia humor.</td></tr>
+<tr><td>Podbój / grabież</td><td>Zwycięstwo podnosi morale. Złupienie domu je obniża.</td></tr>
+<tr><td>Podział łupów</td><td>Niesprawiedliwy podział rodzi urazę.</td></tr>
+<tr><td>Rany, wygnanie, nuda</td><td>Ranni, niespokojni lub poruszeni wygnaniem osadnicy tracą humor.</td></tr>
+</table></div>
+<div class="note">Osobowość ma znaczenie: niespokojni szybko nudzą się w jednym miejscu, a rozrzutni oczekują lepszych usług.</div>
+</div></details>
+
+<details id="c5"><summary>05 // Potrzeby i usługi</summary><div>
+<p>Osadnicy wydają własne pieniądze na potrzeby. Działający budynek dla danej potrzeby przynosi ci dochód. Brakujący lub zamknięty czyni ludzi nieszczęśliwymi.</p>
+<div class="tbl"><table>
+<tr><th>Potrzeba</th><th>Budynek</th></tr>
+<tr><td>Przedmioty, broń, pancerze</td><td>Sklep, Targowisko, Rusznikarz, Kowal</td></tr>
+<tr><td>Naprawy</td><td>Warsztat, Kowal</td></tr>
+<tr><td>Napoje / posiłki</td><td>Bar / Restauracja</td></tr>
+<tr><td>Rozrywka</td><td>Salon gier, Kasyno, Dom publiczny</td></tr>
+<tr><td>Wiara / nauka</td><td>Kościół / Szkoła</td></tr>
+<tr><td>Opieka medyczna</td><td>Apteka, Przychodnia, Szpital</td></tr>
+<tr><td>Odpoczynek</td><td>Koszary, Dormitorium, Motel, Hotel</td></tr>
+</table></div>
+<p>Usługi wymagają pracowników, prądu (niektóre) i zaopatrzenia. Ekonomia jest przetwarzana raz na turę: każdy osadnik sprawdza potrzeby, znajduje pasujący budynek i płaci.</p>
+</div></details>
+
+<details id="c6"><summary>06 // Ekonomia i produkcja</summary><div>
+<p>Typy przedmiotów: Żywność, Mechaniczne, Elektroniczne, Chemiczne, Pancerze, Amunicja, Broń, Paliwo, Transport. Od części mechanicznych i narzędzi po uzi, AK-47, granatniki, kamizelki kuloodporne, muły i konie.</p>
+<ul>
+<li><b>Produkcja:</b> wymaga odpowiedniego budynku, materiałów w magazynie i pracownika z właściwą umiejętnością. Można ją zatrzymać w każdej chwili.</li>
+<li><b>Magazyn:</b> wszystko leży w jednym magazynie. Gotówka jest trzymana w nominałach i służy do pensji i handlu.</li>
+<li><b>Żywność</b> jest regularnie zjadana. Jej brak szkodzi nastrojowi i zdrowiu.</li>
+<li><b>Stan:</b> broń i narzędzia się zużywają. Korzystaj z usług naprawczych.</li>
+<li>Świat ma własną ekonomię, raportowaną globalnie.</li>
+</ul>
+</div></details>
+
+<details id="c7"><summary>07 // Elektryczność</summary><div>
+<ul>
+<li><b>Generator ręczny:</b> jeden pracownik daje 1 jednostkę, dwóch lub więcej daje 2.</li>
+<li><b>Generator diesla:</b> co godzinę spala paliwo z magazynu. Bez paliwa nie ma prądu.</li>
+<li><b>Słoneczne, wiatrowe, elektrownie:</b> nie potrzebują paliwa.</li>
+<li>Prąd jest sprawdzany <b>co godzinę</b>. Jeśli produkcja jest niższa od zapotrzebowania, część budynków się wyłącza.</li>
+</ul>
+<div class="note">Zaplanuj moc, zanim zbudujesz wiele budynków na prąd, i miej zapas paliwa.</div>
+</div></details>
+
+<details id="c8"><summary>08 // Pensje</summary><div>
+<ul>
+<li>Wypłacane raz dziennie wieczorem (17:00) z gotówki osady.</li>
+<li>Trzy stawki: <b>budowniczowie i robotnicy</b>, <b>strażnicy</b>, <b>naukowcy</b>.</li>
+<li>Niewypłaceni pracownicy wpadają w gniew. Wyższe pensje cieszą, ale drenują kasę.</li>
+<li>Pensje nie są wypłacane, gdy osada jest atakowana.</li>
+</ul>
+</div></details>
+
+<details id="c9"><summary>09 // Zdrowie, choroby i rany</summary><div>
+<ul>
+<li>Rany obniżają wydajność. Odpoczynek, leki i budynki medyczne je leczą.</li>
+<li>Stany: Napromieniowany, Zatruty, Chory, Zaraza. Choroba uderza średnio raz na około sześć godzin i się rozprzestrzenia.</li>
+<li>Pomaga personel medyczny (umiejętność Medycyna) z narzędziami oraz apteka, przychodnia lub szpital.</li>
+<li>Ranni wojownicy muszą wyzdrowieć, zanim znów wyruszą.</li>
+</ul>
+</div></details>
+
+<details id="c10"><summary>10 // Wyprawy i zbieractwo</summary><div>
+<p><b>Grupa</b> to zespół osadników podróżujących razem, niosących własne przedmioty i gotówkę. Wysyłasz ją przez budynek <b>Wyprawy</b>.</p>
+<ul>
+<li>Ustaw cel albo ruszaj od razu.</li>
+<li><b>Tempo marszu:</b> Postój, Wolne, Normalne, Szybkie. Szybciej znaczy sprawniej, ale ryzykowniej.</li>
+<li>Umiejętności Tropiciel i Prowadzenie pojazdów, pojazdy i zwierzęta ułatwiają podróż.</li>
+<li>Po powrocie rozstrzygasz łupy, rany, doświadczenie i nastroje.</li>
+</ul>
+<div class="tbl"><table>
+<tr><th>Postawa</th><th>Zachowanie</th></tr>
+<tr><td>Kupiec</td><td>Nigdy nie atakuje</td></tr>
+<tr><td>Zwiadowca</td><td>Unika kontaktu, próbuje uciec</td></tr>
+<tr><td>Szpieg</td><td>Nie atakuje</td></tr>
+<tr><td>Łowca nagród</td><td>Atakuje tylko przestępców</td></tr>
+<tr><td>Obrońca</td><td>Atakuje tylko wrogów</td></tr>
+<tr><td>Najeźdźca</td><td>Atakuje każdego, kto nie jest sojusznikiem</td></tr>
+<tr><td>Bandyta</td><td>Atakuje wszystkich</td></tr>
+<tr><td>Negocjatorzy</td><td>Najpierw próbują rozmawiać</td></tr>
+</table></div>
+<img src="img/explore_eng.png" alt="Ekran eksploracji" loading="lazy" style="margin-top:12px;border:2px solid #8c7a4a">
+</div></details>
+
+<details id="c11"><summary>11 // Spotkania</summary><div>
+<p>W podróży lub w pobliżu domu możesz spotkać przyjaznych lub wrogich wędrowców, dzikie bestie, zagrożenia takie jak promieniowanie, przydatne znaleziska albo chorobę. Wyniki zależą częściowo od <b>testów umiejętności</b> (Przetrwanie, Percepcja, Zwinność, Wiedza). Grupy spotykające się na mapie mogą się zderzyć: spotkanie, okazja do handlu, walka lub szansa na prześlizgnięcie się.</p>
+</div></details>
+
+<details id="c12"><summary>12 // Handel i plotki</summary><div>
+<ul>
+<li><b>Własny sklep:</b> sprzedawaj swoim osadnikom.</li>
+<li><b>Wymiana grupowa:</b> wymieniaj przedmioty między grupą a osadą.</li>
+<li><b>Obce sklepy:</b> handluj z innymi osadami.</li>
+<li>Umiejętności <b>Handel</b> i <b>Krasomówstwo</b> poprawiają ceny. Wartość zależy od wagi, rzadkości i stanu.</li>
+<li><b>Plotki:</b> zapłać w barze, by dowiedzieć się o pobliskich miejscach, grupach i ludziach. Lepszy bar to lepsze informacje.</li>
+</ul>
+<img src="img/inventory_eng.png" alt="Ekran ekwipunku" loading="lazy" style="margin-top:12px;border:2px solid #8c7a4a">
+</div></details>
+
+<details id="c13"><summary>13 // Walka</summary><div>
+<p>Walka <b>sterowana przez gracza</b> (widzisz pole walki i wydajesz rozkazy) lub <b>automatyczna</b> (gra rozstrzyga ją sama). Wojownicy tworzą <b>oddziały</b> jako atakujący lub obrońcy. Możesz przejąć dowodzenie, dołączyć do oddziału, wyznaczać cele lub się wycofać.</p>
+<ul>
+<li><b>Akcje:</b> Ruch, Wejście do walki, Strzał (pojedynczy, krótka seria, seria, ciągły: więcej strzałów to mniejsza celność i większe zużycie amunicji), Przeładowanie, Zmiana broni, Ukrycie.</li>
+<li><b>Bronie:</b> białe, dystansowe, ciężkie. Liczy się zasięg i amunicja.</li>
+<li><b>Pancerz</b> zmniejsza obrażenia. <b>Ściany i przeszkody</b> blokują ruch i widoczność.</li>
+<li><b>Umiejętności:</b> Walka wręcz, Strzelectwo, Broń ciężka, Broń miotana, Taktyka, Materiały wybuchowe. <b>Cechy:</b> Zwinność, Percepcja, Odwaga, Siła.</li>
+<li>Ciężko ranni wojownicy mogą zostać obezwładnieni lub zabici. Niskie morale i odwaga skłaniają do ucieczki.</li>
+<li><b>Po bitwie:</b> zwycięzca zbiera łupy, ocaleni zyskują doświadczenie, polegli psują nastrój, a raport z bitwy pokazuje przebieg.</li>
+</ul>
+</div></details>
+
+<details id="c14"><summary>14 // Fortyfikacje i obrona</summary><div>
+<p>Podczas bitwy w twojej osadzie rutynowe czynności, takie jak pensje, prąd i choroby, są <b>wstrzymane</b>.</p>
+<ul>
+<li>Bariery (płot, mur, posterunek) blokują ruch, a niektóre także widoczność. Projektuj obronę świadomie.</li>
+<li>Używaj posterunków, wież strażniczych, pułapek i pól minowych.</li>
+<li>Trzymaj w domu uzbrojonych, wyszkolonych osadników i płać strażnikom na czas.</li>
+<li>Bestie atakują też osady. Zaplanuj straże, jeśli okolica jest zagrożona.</li>
+</ul>
+</div></details>
+
+<details id="c15"><summary>15 // Grabież i podbój</summary><div>
+<ul>
+<li><b>Grabież:</b> wyślij grupę, by złupiła budynki. Pomagają Złodziejstwo, Skradanie i Percepcja.</li>
+<li><b>Podbój:</b> pokonaj obrońców, a miejsce będzie twoje, co cieszy osadników.</li>
+<li>Jeśli złupiono twój dom, osadnicy wpadają w gniew.</li>
+<li>Miejsca mogą zostać uszkodzone, zniszczone lub zamienione w ruiny.</li>
+</ul>
+</div></details>
+
+<details id="c16"><summary>16 // Bestie i gniazda</summary><div>
+<p>Szczury, krokodyle, mutanty, dzikie psy, gigantyczne mrówki, kanibale, wielkie koty, ptaki, potwory i roboty bojowe. Żyją w <b>gniazdach</b>, wysyłają grupy, a gniazda z czasem rosną i się rozprzestrzeniają. <b>Zniszczenie gniazda</b> eliminuje pobliskie zagrożenie i może przynieść nagrodę.</p>
+</div></details>
+
+<details id="c17"><summary>17 // Porady przetrwania i koniec gry</summary><div>
+<p><b>Przegrywasz</b>, gdy nie masz osad ani ludzi zdolnych kontynuować, albo gdy kończy się okres próbny (tylko gry próbne).</p>
+<ol>
+<li>Najpierw jedzenie, mieszkania i prąd.</li>
+<li>Obserwuj szczęście i wcześnie usuwaj przyczyny.</li>
+<li>Różnicuj umiejętności: budowniczy, medyk, handlarz i kilku wojowników.</li>
+<li>Broń się mądrze: bariery, wieże, uzbrojeni osadnicy w domu.</li>
+<li>Płać pensje na czas i miej rezerwę gotówki.</li>
+<li>Nie rozrastaj się za bardzo. Każdy budynek kosztuje pracowników, prąd i utrzymanie.</li>
+<li>Uważaj na noc.</li>
+<li>Zwiadowca przed grabieżą.</li>
+<li>Naprawiaj swój sprzęt.</li>
+</ol>
+</div></details>
+</div>
+</div>
+</section>
+
+<section id="roadmap">
+<div class="wrap">
+<h2>Plan rozwoju // Co finansujemy?</h2>
+<p>Każda wpłata na Patreonie bezpośrednio kupuje czas pracy nad grą oraz wysokiej jakości grafiki i dźwięki, zamieniając podstawową wersję w ogromne postapokaliptyczne uniwersum.</p>
+<ul class="road">
+<li data-n="1"><b>Podziemne lochy, jaskinie i kopalnie</b><br>Nowe podziemne lokacje do eksploracji, rzadkie zasoby i unikalne podziemne zagrożenia.</li>
+<li data-n="2"><b>Rozbudowany system misji</b><br>Fabularne zadania i dynamiczne wydarzenia narracyjne.</li>
+<li data-n="3"><b>Podbój osad</b><br>Mechaniki najazdów, rozszerzania terytorium i dyplomacji pustkowi.</li>
+<li data-n="4"><b>Nowy warunek zwycięstwa: Władza nad światem</b><br>Podbij całe pustkowie zamiast tylko przetrwać.</li>
+<li data-n="5"><b>System frakcji</b><br>Dołącz do globalnych konfliktów, walcz o wpływy i pnij się po szczeblach frakcji.</li>
+<li data-n="6"><b>Multiplayer w czasie rzeczywistym</b><br>Rywalizuj lub współpracuj z innymi Przywódcami na żywo.</li>
+</ul>
+<h3>Cele dodatkowe</h3>
+<ul>
+<li>Misje eskorty zaopatrzenia i karawany handlowe</li>
+<li>Uzbrojone pojazdy bojowe</li>
+<li>Dodatkowe wersje językowe</li>
+</ul>
+<div class="cta"><a class="btn alt" href="https://www.patreon.com/cw/NewEdenSurvivalWasteland" target="_blank" rel="noopener">&#9829; Dołącz do Patreona</a></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<img src="img/icon.png" alt="" width="64" height="64" style="margin:0 auto 12px;border-radius:50%">
+<p class="soc">
+<a href="https://play.google.com/store/apps/details?id=com.Frostworks_PL.NewEden" target="_blank" rel="noopener">Google Play</a>
+<a href="https://youtu.be/lHU7vyvSC9k" target="_blank" rel="noopener">YouTube</a>
+<a href="https://www.patreon.com/cw/NewEdenSurvivalWasteland" target="_blank" rel="noopener">Patreon</a>
+<a href="https://discord.gg/KgprKDjhY" target="_blank" rel="noopener">Discord</a>
+</p>
+<p>Zaprojektowane, zaprogramowane i narysowane przez jednego twórcę. Powstało z kawy i promieniowania.</p>
+<p>&copy; <span id="y">2025</span> New Eden: Survival Wasteland. Wszelkie prawa zastrzeżone. Google Play jest znakiem towarowym Google LLC.</p>
+</div>
+</footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+</body>
+</html>
